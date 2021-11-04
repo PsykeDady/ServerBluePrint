@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<button class="btn btn-danger" 
+		(click)="onDestroy()">  &#128465; </button>
+		<p>{{server.name}}</p>	
+	</div>
+	<div class="panel-body">
+		<p [ngStyle]=coloreBody()>
+			{{server.content}}
+		</p>
+	</div>
+</div>
