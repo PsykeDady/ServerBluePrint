@@ -13,6 +13,7 @@ import {
 	styleUrls: ['./cockpit.component.css'],
 })
 export class CockpitComponent implements OnChanges {
+	
 	@Output('server') serverAdded = new EventEmitter<{
 		name: string;
 		content: string;
