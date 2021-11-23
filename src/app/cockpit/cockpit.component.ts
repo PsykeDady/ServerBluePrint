@@ -1,27 +1,23 @@
 import {
 	Component,
-	EventEmitter,
+
 	Input,
 	OnChanges,
-	Output,
-	SimpleChanges,
+
+	SimpleChanges
 } from '@angular/core';
+import { ServerList } from '../services/serverlist.service';
 
 @Component({
 	selector: 'app-cockpit',
 	templateUrl: './cockpit.component.html',
 	styleUrls: ['./cockpit.component.css'],
+	providers: [ServerList]
 })
 export class CockpitComponent implements OnChanges {
+
+	constructor(private server_list:ServerList){}
 	
-	@Output('server') serverAdded = new EventEmitter<{
-		name: string;
-		content: string;
-	}>();
-	@Output('blueprint') blueprintAdded = new EventEmitter<{
-		name: string;
-		content: string;
-	}>();
 	newServerName;
 	string = '';
 	newServerContent: string = '';
@@ -33,23 +29,15 @@ export class CockpitComponent implements OnChanges {
 		console.log(changes["testo"])
 	}
 
-	onAddServer() {
+	onAdd(server : boolean) {
 		if (this.newServerContent === '' || this.newServerName === '') return;
-		this.serverAdded.emit({
-			name: this.newServerName,
-			content: this.newServerContent,
-		});
+		
+		if (server) this.server_list.addServer	 (this.newServerName,this.newServerContent);
+		else 		this.server_list.addBlueprint(this.newServerName,this.newServerContent);
+
 		this.newServerContent = '';
 		this.newServerName = '';
 	}
 
-	onAddBlueprint() {
-		if (this.newServerContent === '' || this.newServerName === '') return;
-		this.blueprintAdded.emit({
-			name: this.newServerName,
-			content: this.newServerContent,
-		});
-		this.newServerContent = '';
-		this.newServerName = '';
-	}
+	
 }

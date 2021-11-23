@@ -4,18 +4,15 @@
 	</app-titolo-blu>
 	<input type="text" class="form-control" [(ngModel)]="testo">
 	<app-cockpit
-		(server)="onServerAdded($event)"
-		(blueprint)="onBlueprintAdded($event)"
 		[testo]="testo"
 	></app-cockpit>
 	<hr>
 	<div class="row">
 		<div class="col-xs-12">
 			<app-server-element 
-			*ngFor="let server of serverElements; let indice = index"
+			*ngFor="let server of serverlist.server_list; let indice = index"
 			[srv]="server"
 			[id]="indice"
-			(destroy)="onDestroy($event)"
 			></app-server-element>
 		</div>
 	</div> 

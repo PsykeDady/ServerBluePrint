@@ -9,26 +9,23 @@ import {
 	OnInit,
 	ViewChild,
 } from '@angular/core';
+import { ServerList } from './services/serverlist.service';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.css'],
+	providers: [ServerList]
 })
 export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
-	static readonly SERVER_TYPE = 'server';
-	static readonly BLUEPRINT_TYPE = 'blueprint';
 
-	serverElements: { name: string; type: string; content: string }[] = [];
+	constructor(public serverlist : ServerList){}
 	testo: string;
 
 	ngDoCheck() {
 		console.log("do check on appcompoent")
 	}
 
-	constructor() {
-		console.log('app.component constructor');
-	}
 
 	ngOnInit() {
 		console.log('ng on init app.component');
@@ -51,27 +48,11 @@ export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterCon
 	}
 
 
-	onServerAdded(data: { name: string; content: string }) {
-		this.serverElements.push({
-			type: 'server',
-			name: data.name,
-			content: data.content,
-		});
-	}
-	onBlueprintAdded(data: { name: string; content: string }) {
-		this.serverElements.push({
-			type: 'blueprint',
-			name: data.name,
-			content: data.content,
-		});
-	}
 	@ViewChild('etichetta') etx: ElementRef;
 	reset() {
 		if (!this.etx || !this.etx.nativeElement) return;
 		(this.etx.nativeElement as HTMLInputElement).value = '';
 	}
 
-	onDestroy(id:number){
-		this.serverElements=this.serverElements.filter((v,i)=> i!=id)
-	}
+
 }
