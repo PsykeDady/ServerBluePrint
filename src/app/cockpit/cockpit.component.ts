@@ -18,8 +18,7 @@ export class CockpitComponent implements OnChanges {
 
 	constructor(private server_list:ServerList){}
 	
-	newServerName;
-	string = '';
+	newServerName:string = '';
 	newServerContent: string = '';
 	@Input() testo: string;
 
