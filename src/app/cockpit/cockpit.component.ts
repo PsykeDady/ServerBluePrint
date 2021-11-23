@@ -12,7 +12,6 @@ import { ServerList } from '../services/serverlist.service';
 	selector: 'app-cockpit',
 	templateUrl: './cockpit.component.html',
 	styleUrls: ['./cockpit.component.css'],
-	providers: [ServerList]
 })
 export class CockpitComponent implements OnChanges {
 

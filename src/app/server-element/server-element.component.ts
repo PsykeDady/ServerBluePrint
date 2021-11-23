@@ -7,7 +7,6 @@ import { ServerList } from '../services/serverlist.service';
 	selector: 'app-server-element',
 	templateUrl: './server-element.component.html',
 	styleUrls: ['./server-element.component.css'],
-	providers: [ServerList]
 })
 export class ServerElementComponent implements OnDestroy {
 
@@ -29,7 +28,7 @@ export class ServerElementComponent implements OnDestroy {
 		return this.server.type === ServerType.SERVER
 			? {
 					color: 'red',
-					'font-weight': 'bold',
+					'font-weight': 'bold'
 			  }
 			: { 'font-style': 'italic' };
 	}
