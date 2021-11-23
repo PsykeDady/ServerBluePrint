@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
+import { LoggingService } from './services/logging.service';
 import { ServerList } from './services/serverlist.service';
 import { TitoloBluComponent } from './titolo-blu/titolo-blu.component';
 
@@ -20,6 +21,6 @@ import { TitoloBluComponent } from './titolo-blu/titolo-blu.component';
     FormsModule
   ],
   bootstrap: [AppComponent],
-  providers:[ServerList]
+  providers:[LoggingService, ServerList]
 })
 export class AppModule { }
