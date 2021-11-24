@@ -10,10 +10,10 @@ export class TitoloBluComponent implements AfterContentInit, AfterViewChecked {
 	@ContentChild("titolo") titolo : ElementRef;
 
 	ngAfterContentInit(){
-		console.log("Titolo per Content Child: ",this.titolo)
+		//console.log("Titolo per Content Child: ",this.titolo)
 	}
 
 	ngAfterViewChecked(){
-		console.log("Titolo per Content Child: ",this.titolo)
+		//console.log("Titolo per Content Child: ",this.titolo)
 	}
 }

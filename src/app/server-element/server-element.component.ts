@@ -20,8 +20,12 @@ export class ServerElementComponent implements OnDestroy {
 		this.serverlist.destroy(this.id);
 	}
 
+	edit() {
+		this.serverlist.edit(this.id);
+	}
+
 	ngOnDestroy(){
-		console.log(`${this.id} destroyed`)
+		//console.log(`${this.id} destroyed`)
 	}
 
 	coloreBody() {

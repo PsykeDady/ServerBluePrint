@@ -1,8 +1,16 @@
 <div class="panel panel-default">
-	<div class="panel-heading">
-		{{server.name}}
+		<div class="panel-heading">
+			<button class="btn btn-warning" 
+			(click)="edit()">  
+			✏ 
+		</button>
+		<span style="padding-right: 0.8vw;"></span>
+		<strong><u>{{server.name}}</u></strong>
+		<span style="padding-left: 0.8vw;"></span>
 		<button class="btn btn-danger" 
-		(click)="onDestroy()">  &#128465; </button>
+			(click)="onDestroy()">  
+			🗑 
+		</button>
 	</div>
 	<div class="panel-body">
 		<p [ngStyle]=coloreBody()>

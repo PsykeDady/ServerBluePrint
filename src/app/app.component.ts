@@ -22,28 +22,28 @@ export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterCon
 	testo: string;
 
 	ngDoCheck() {
-		console.log("do check on appcompoent")
+		//console.log("do check on appcompoent")
 	}
 
 
 	ngOnInit() {
-		console.log('ng on init app.component');
+		//console.log('ng on init app.component');
 	}
 
 	ngAfterContentInit() {
-		console.log("content init on app component")
+		//console.log("content init on app component")
 	}
 
 	ngAfterContentChecked() {
-		console.log("content checked on component")
+		//console.log("content checked on component")
 	}
 
 	ngAfterViewInit() {
-		console.log("view init on app component")
+		//console.log("view init on app component")
 	}
 
 	ngAfterViewChecked() {
-		console.log("view checked on component")
+		//console.log("view checked on component")
 	}
 
 

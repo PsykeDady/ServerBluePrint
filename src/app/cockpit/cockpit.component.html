@@ -6,7 +6,7 @@
 		<label>Server Content</label>
 		<input type="text" class="form-control" [(ngModel)]="newServerContent">
 		<br>
-		<button [disabled]="newServerContent===''||newServerName===''" class="btn btn-primary col-xs-offset-0" (click)="onAdd(true)">Add {{newServerName}} Server</button>
-		<button [disabled]="newServerContent===''||newServerName===''" class="btn btn-primary col-xs-offset-1" (click)="onAdd(false)">Add {{newServerName}} Server Blueprint</button>
+		<button [disabled]="newServerContent===''||newServerName===''" class="btn btn-primary col-xs-offset-0" (click)="onAdd(true)">{{modeEdit? "Edit as" :  "Add"}} {{newServerName}} Server</button>
+		<button [disabled]="newServerContent===''||newServerName===''" class="btn btn-primary col-xs-offset-1" (click)="onAdd(false)">{{modeEdit? "Edit as" :  "Add"}} {{newServerName}} Server Blueprint</button>
 	</div>
 </div>
